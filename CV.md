@@ -1,6 +1,7 @@
+
 # <span style="color:yellow">***CURRICULUM***</span>
-![Alt text](368089808_304832998794168_5338606281485923356_n-1.jpg) ![Alt text](369621682_624091276527147_8739065768455492053_n.jpg)
-## <span style="color:yellow">***INFORMACIÓN PERSONAL***</span>
+![Gato lindo](https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSDvXvBhHHOMran8-dWfXgL3BZ-nzXvDwYLMA&usqp=CAU)
+
  
 #### -HOMBRE
 #### -18 AÑOS
@@ -12,8 +13,8 @@
 #### - Redes sociales  (@Aleex_Deh)
 
 ##  <span style="color:yellow">***HOBBIES***</span>
-#### - <span style="color:purple">Gimnasio</span>  💪💪 🏋️‍♂️🏋️‍♂️
-#### - <span style="color:purple">Balonceto</span>  💪🏀
+#### - <span style="color:purple">Gimnasio</span>  
+#### - <span style="color:purple">Balonceto</span>  
 
 
 
