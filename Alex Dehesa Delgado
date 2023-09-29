@@ -1,0 +1,60 @@
+https://moodle.nigul.coop/course/modedit.php?add=assign&type=&course=82&section=3&return=0&sr=0
+ABSOLUTA
+
+Https://     Protocolo
+moodle.nigul.coop     Nombre del pc
+/course      directorio
+modedit.php     archivo
+=assign&type=&course=82&section=3&return=0&sr=0      queri
+
+
+
+
+RELATIVA
+github.com/marketplace?type=apps  
+
+gihub.com      Nombre del pc
+marketplace      directorio   
+type=apps     queri
+
+
+
+
+ABSOLUTA
+https://www.meneame.net/story/primer-vuelo-avion-hidrogeno-mas-grande-mundo#comentario1
+
+Https      Protocolo
+www.meneame.net       Nombre del pc
+story       Direcorio
+/primer-vuelo-avion-hidrogeno-mas-grande-mundo      Archivo 
+
+
+
+
+
+ABSOLUTA
+https://thispersondoesnotexist.com/image
+
+hhtps://    protocolo
+thispersondoesnotexit.com    nombre del pc
+/image    directorio
+
+
+
+
+ABSOLUTA
+sftp://example.com
+
+sftp://      protocolo
+example.com    Nombre del pc
+
+
+
+RELATIVA
+info/noticia.html?p=2
+
+info     directorio
+noticia.html     archivp
+
+
+
