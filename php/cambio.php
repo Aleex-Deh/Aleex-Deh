@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Cambio de moneda</title>
+</head>
+<body>
+
+<?php
+// Inicializar la variable $cifra
+$cifra = '';
+
+// Verificar si el formulario ha sido enviado
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    // Recoger la cifra numérica del formulario
+    $cifra = isset($_POST["nom"]) ? $_POST["nom"] : '';
+}
+
+// cargamos el contenido del archivo
+$arxiu = "onichan.xml";
+$me_interesan = ["USD", "JPY", "SEK", "GBP", "CAD"];
+$mi_cambio = array("USD"=>0, "JPY"=>0, "SEK"=>0, "GBP"=>0, "CAD"=>0);
+
+if(!$xml = simplexml_load_file($arxiu)){
+    echo "No s'ha pogut carregar l'arxiu";
+    die();
+} 
+
+$mis_datos = $xml->Cube->Cube;
+
+// carga los datos en el array
+foreach ($mis_datos->Cube as $cambio) {
+    $rate = (string)$cambio['rate'];
+    $currency = (string)$cambio['currency'];
+ 
+    if (in_array($currency, $me_interesan)) {
+        $mi_cambio[$currency] = $rate;      
+    }
+}
+
+// Agafam les variables del get del navegador
+$moneda = isset($_GET["moneda"]) ? $_GET["moneda"] : "";
+/// ---------------
+// comprovarem si tenim dades o no ----------
+if ($moneda==""){
+    $tengo_datos = false;
+} else {
+    $tengo_datos = true;
+}
+?>
+
+<form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post">
+    <label for="moneda">¿Qué cambio quieres conocer?:</label>
+    <select name="moneda" id="moneda">
+        <option value="USD" <?php echo ($moneda=="USD"? "selected": ""); ?>>
+            Dólar Americano</option>
+        <option value="SEK" <?php echo ($moneda=="SEK"? "selected": ""); ?>>
+            Corona Sueca</option>
+        <option value="GBP" <?php echo ($moneda=="GBP"? "selected": ""); ?>>
+            Libra esterlina</option>
+        <option value="JPY" <?php echo ($moneda=="JPY"? "selected": ""); ?>>
+            Yen</option>
+    </select>
+    <p>Cifra numérica: <input type="number" name="nom" value="<?php echo isset($cifra) ? $cifra : ''; ?>" required></p>
+    <input type="submit" value="Enviar">
+</form>
+
+<hr>
+
+<?php
+if($tengo_datos==true) {
+    echo "Has elegido: $moneda<br>";
+    echo "Tiene un cambio respecto al euro de :".$mi_cambio[$moneda]."<br>";
+}
+?> 
+
+<?php
+// Mostrar la cifra solo si ha sido enviada
+if ($cifra !== '') {
+    echo "<h2>Resultado:</h2>";
+    echo "<p>Cifra introducida: $cifra</p>";
+}
+?>
+
+<hr>
+</body>
+</html>
